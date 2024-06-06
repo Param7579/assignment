@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Are You Moving?</title>
+    
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="form-elements.html">Form Elements</a></li>
+            <li><a href="trips.html">Trips</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="what-are-you-moving.html">What Are You Moving?</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>What Are You Moving?</h1>
+        <form action="/submit-cargo" method="post">
+            <label for="cargo-type">Cargo Type:</label>
+            <select id="cargo-type" name="cargo-type" required>
+                <option value="general-freight">General Freight</option>
+                <option value="hazardous-materials">Hazardous Materials</option>
+                <option value="perishable-goods">Perishable Goods</option>
+                <option value="oversized-items">Oversized Items</option>
+            </select>
+
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" id="weight" name="weight" min="0" required>
+
+            <label for="dimensions">Dimensions (L x W x H in cm):</label>
+            <input type="text" id="dimensions" name="dimensions" pattern="\d+x\d+x\d+" placeholder="e.g. 100x50x30" required>
+
+            <label for="special-instructions">Special Handling Instructions:</label>
+            <textarea id="special-instructions" name="special-instructions" rows="4" cols="50"></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </main>
+</body>
+</html>

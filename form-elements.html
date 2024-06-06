@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+    
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 1em;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group input, .radio-group input {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="form-elements.html">Form Elements</a></li>
+            <li><a href="trips.html">Trips</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="what-are-you-moving.html">What Are You Moving?</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Form Elements</h1>
+        <form action="/submit-booking" method="post">
+            <label for="pickup-location">Pickup Location:</label>
+            <input type="text" id="pickup-location" name="pickup-location" required>
+
+            <label for="delivery-location">Delivery Location:</label>
+            <input type="text" id="delivery-location" name="delivery-location" required>
+
+            <label for="cargo-type">Cargo Type:</label>
+            <select id="cargo-type" name="cargo-type">
+                <option value="general-freight">General Freight</option>
+                <option value="hazardous-materials">Hazardous Materials</option>
+                <option value="perishable-goods">Perishable Goods</option>
+                <option value="oversized-items">Oversized Items</option>
+            </select>
+
+            <label for="pickup-date">Pickup Date:</label>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+
+            <label for="delivery-date">Delivery Date:</label>
+            <input type="date" id="delivery-date" name="delivery-date" required>
+
+            <fieldset class="radio-group">
+                <legend>Shipping Priority:</legend>
+                <label>
+                    <input type="radio" name="priority" value="standard" required>
+                    Standard
+                </label>
+                <label>
+                    <input type="radio" name="priority" value="express">
+                    Express
+                </label>
+            </fieldset>
+
+            <fieldset class="checkbox-group">
+                <legend>Additional Services:</legend>
+                <label>
+                    <input type="checkbox" name="services" value="insurance">
+                    Insurance
+                </label>
+                <label>
+                    <input type="checkbox" name="services" value="tracking">
+                    Real-Time Tracking
+                </label>
+                <label>
+                    <input type="checkbox" name="services" value="packaging">
+                    Packaging
+                </label>
+            </fieldset>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Enter any additional information here..."></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

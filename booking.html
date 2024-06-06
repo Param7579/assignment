@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="form-elements.html">Form Elements</a></li>
+            <li><a href="trips.html">Trips</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="what-are-you-moving.html">What Are You Moving?</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Booking</h1>
+        <form action="/submit-booking" method="post">
+            <label for="pickup-location">Pickup Location:</label>
+            <input type="text" id="pickup-location" name="pickup-location" required>
+
+            <label for="delivery-location">Delivery Location:</label>
+            <input type="text" id="delivery-location" name="delivery-location" required>
+
+            <label for="cargo-type">Cargo Type:</label>
+            <select id="cargo-type" name="cargo-type" required>
+                <option value="general-freight">General Freight</option>
+                <option value="hazardous-materials">Hazardous Materials</option>
+                <option value="perishable-goods">Perishable Goods</option>
+                <option value="oversized-items">Oversized Items</option>
+            </select>
+
+            <label for="pickup-date">Pickup Date:</label>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+
+            <label for="delivery-date">Delivery Date:</label>
+            <input type="date" id="delivery-date" name="delivery-date" required>
+
+            <label for="cargo-weight">Cargo Weight (in kg):</label>
+            <input type="number" id="cargo-weight" name="cargo-weight" min="0" required>
+
+            <label for="cargo-dimensions">Cargo Dimensions (L x W x H in cm):</label>
+            <input type="text" id="cargo-dimensions" name="cargo-dimensions" pattern="\d+x\d+x\d+" placeholder="e.g. 100x50x30" required>
+
+            <label for="special-instructions">Special Handling Instructions:</label>
+            <textarea id="special-instructions" name="special-instructions" rows="4" cols="50"></textarea>
+
+            <label for="customer-name">Customer Name:</label>
+            <input type="text" id="customer-name" name="customer-name" required>
+
+            <label for="customer-email">Customer Email:</label>
+            <input type="email" id="customer-email" name="customer-email" required>
+
+            <label for="customer-phone">Customer Phone:</label>
+            <input type="tel" id="customer-phone" name="customer-phone" pattern="[0-9]{10}" placeholder="e.g. 1234567890" required>
+
+            <button type="submit">Book Now</button>
+            <button type="reset">Reset</button>
+        </form>
+        <section id="booking-guidelines">
+            <h2>Booking Guidelines</h2>
+            <p>To ensure a smooth booking process, please follow these guidelines:</p>
+            <ul>
+                <li>Ensure all required fields are accurately filled out.</li>
+                <li>Double-check pickup and delivery locations for correctness.</li>
+                <li>Provide detailed cargo dimensions and weight for proper truck assignment.</li>
+                <li>If you have any special handling instructions, mention them clearly.</li>
+                <li>Provide valid contact information to receive booking updates and confirmations.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
